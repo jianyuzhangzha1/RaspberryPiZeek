@@ -1,21 +1,25 @@
 # Raspberry Pi Zeek
 
 ## Update zhang jianyu 
-> 20260417 runned on trexie, compile cost about 1 hour
->
+ 20260417 runned on trexie, compile cost about 1 hour
 
+
+
+  > 1 Can't pass the configure, need to install the library first
   ```Bash
   sudo apt install libnode-dev  libzmq3-dev -y
   ```
-  > 20260417 can't pass the configure zhang jianyu
 
-  if failed when execute configure, try
+  > 2 if failed when execute configure, try below script. To fetch the submodule's makefile again.
   ```Bash
   git submodule update --init --recursive
   ```
 
+  > 3 For Raspberry Pi 4B has four core, we can set 4. But due to the heat or memory limition, set to 2 is recommended. Of course, cross compile with a powerful PC is even better.
+  ```Bash
   make -j2
-  For Raspberry Pi 4B has four core, we can set 4. But due to the heat or memory limition, set to 2 is recommended. Of course, cross compile with a powerful PC is even better.
+  ```
+<br>
 
 ## Deployment of Zeek on a Raspberry Pi 4B<BR />
 This is some of my work deploying Zeek NSM on a Raspberry Pi<BR />
