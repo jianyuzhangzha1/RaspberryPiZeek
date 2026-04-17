@@ -1,4 +1,22 @@
 # Raspberry Pi Zeek
+
+## Update zhang jianyu 
+> 20260417 runned on trexie, compile cost about 1 hour
+>
+
+  ```Bash
+  sudo apt install libnode-dev  libzmq3-dev -y
+  ```
+  > 20260417 can't pass the configure zhang jianyu
+
+  if failed when execute configure, try
+  ```Bash
+  git submodule update --init --recursive
+  ```
+
+  make -j2
+  For Raspberry Pi 4B has four core, we can set 4. But due to the heat or memory limition, set to 2 is recommended. Of course, cross compile with a powerful PC is even better.
+
 ## Deployment of Zeek on a Raspberry Pi 4B<BR />
 This is some of my work deploying Zeek NSM on a Raspberry Pi<BR />
 Zeek can be found here: https://github.com/zeek<BR />
@@ -48,6 +66,13 @@ Install all required Zeek dependencies
   ```Bash
   sudo apt-get install cmake make gcc g++ flex bison libpcap-dev libssl-dev python3 python3-dev swig zlib1g-dev -y
   ```
+
+
+  ```Bash
+  sudo apt install libnode-dev  libzmq3-dev -y
+  ```
+  > 20260417 can't pass the configure zhang jianyu
+
 ## Optional Dependences:
 Install optional dependencies
   ```Bash
@@ -68,6 +93,11 @@ cd zeek
 make
 make install-aux
 ```
+if failed when execute configure, try
+```Bash
+git submodule update --init --recursive
+```
+
 ## Give the current user (pi) ownership of the Zeek binary
 ```Bash
 sudo chown -R pi:pi /opt/zeek
@@ -87,13 +117,5 @@ zeekctl
 [zeekctl] deploy
 [zeekctl] status
 [zeekctl] debug
-
-## Connect with me at
-
-<a href="https://twitter.com/HMInfoSecViking?ref_src=twsrc%5Etfw"><IMG SRC="https://github.com/bvoris/bvoris/blob/master/twitter.jpg" WIDTH=10% HEIGHT=10% ALIGN=LEFT></a>	
-<a href="https://www.linkedin.com/in/brad-voris" target="_blank"><IMG SRC="https://github.com/bvoris/bvoris/blob/master/linkedin.png" WIDTH=10% HEIGHT=4% ALIGN=RIGHT></a>
-<BR /> 
-<A HREF="https://www.victimoftechnology.com">Victim Of Technology<A />
-<BR /><BR />
 
 
