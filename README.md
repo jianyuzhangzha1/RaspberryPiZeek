@@ -1,7 +1,7 @@
 # Raspberry Pi Zeek
 
-## Update zhang jianyu 
- 20260417 runned on trexie, compile cost about 1 hour
+### Update zhang jianyu 
+### 20260417 runned on trexie, compiled with more than 2 hours
 
 
 
@@ -19,6 +19,14 @@
   ```Bash
   make -j2
   ```
+
+  > 4 After make install, need todo something to make zeek work
+  ```Bash
+  sudo apt install python3-websockets
+  sudo chown -R zhangjianyu:zhangjianyu /opt/zeek
+  sudo setcap cap_net_raw=eip /opt/zeek/bin/zeek
+  ```
+
 <br>
 
 ## Deployment of Zeek on a Raspberry Pi 4B<BR />
